@@ -22,10 +22,18 @@ Output =>
 [49, 20, 500]
 
 */
-
-function MultiByNum1OrNum2() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfNum2 = [7,2,50]
+function MultiByNum1OrNum2(arr,num1,num2) {
+  var array = arr.map(x => {
+    if(x % num1 === 0){
+     return x*num1;
+    }else{
+     return x*num2;
+    }
+  })
+  return array;
 }
+console.log(MultiByNum1OrNum2(arrOfNum2,7,10));
 
 /* Q2:
 Using Filter
@@ -57,10 +65,18 @@ Output =>
   { name: "mercer",age:26}
 ]
 */
-
-function longerAndYounger() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfObj1 = [
+  { name: "alex" ,age:22},
+  { name: "mercer",age:26},
+  { name: "alice" ,age:33},
+  { name: "zaheer",age:35},
+  { name: "elizabeth",age:45}
+]
+function longerAndYounger(obj,num1,num2) {
+    var array = obj.filter(x => x.name.length > num1 && x.age < num2);
+    return array;    
 }
+console.log(longerAndYounger(arrOfObj1,4,30))
 
 /* Q3:
 Using Reduce
@@ -89,9 +105,18 @@ Output =>
 "alice, fried chiken, pizaa, burger, hot dog, eggs"
   
 */
-function nameAndAllFoods() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfObj2 = [
+  { name: "alex", food: "fried chiken" },
+  { name: "mercer", food: "pizaa" },
+  { name: "alice", food: "burger" },
+  { name: "zaheer", food: "hot dog" },
+  { name: "elizabeth", food: "eggs" }
+]
+function nameAndAllFoods(obj,num) {
+    var array = obj.reduce((x,y) => x.name+" " + y.food) 
+    return array;    
 }
+console.log(nameAndAllFoods(arrOfObj2,0))
 
 
 /*
@@ -106,6 +131,8 @@ You need to write the solution in the q4.html
 2. Add these style int he same file q4.html:
   a. id => "no"     the color of the background  =>   Red
   b. id => "yes"    the color of the background  =>   Green
+
+  
 
 3. Using jQuery add these logic to q4.html in the same file:
   a. when click on the button with id "no"  => cahnge the color of the div with class "main" to red

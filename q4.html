@@ -2,11 +2,35 @@
 <html>
 
 <head>
-	<!-- WRITE YOUR CODE UNDER THIS LINE          -->
+	<title>Q4</title>
+	<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<!-- WRITE YOUR CODE UNDER THIS LINE          -->
+	<div class="main">Main div is here</div>
+	<button id="no">Red</button>
+	<button id="yes">Green</button>
+
+
+	<script>
+		$(document).ready(function(){
+
+			$("#no").css({background:"red"});
+			$("#yes").css({background:"green"})
+
+			$("#no").click(function(){
+				$(".main").css({color:"red"});
+			})
+
+			$("#yes").click(function(){
+				$(".main").css({color:"green"})
+			})
+
+		});
+	</script>
 </body>
 
 </html>
